@@ -37,7 +37,7 @@
 
 //   const fetchSalaries = async () => {
 //     try {
-//       const response = await axios.get("http://localhost:5000/api/salary", {
+//       const response = await axios.get("https://hr-sample-backend.onrender.com/api/salary", {
 //         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
 //       });
 
@@ -51,7 +51,7 @@
 
 //   const handleMarkAsPaid = async (id) => {
 //     try {
-//       await axios.put(`http://localhost:5000/api/salary/mark-paid/${id}`, {}, {
+//       await axios.put(`https://hr-sample-backend.onrender.com/api/salary/mark-paid/${id}`, {}, {
 //         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
 //       });
 
@@ -65,7 +65,7 @@
 //     if (!window.confirm("Are you sure you want to delete this salary record?")) return;
 
 //     try {
-//       await axios.delete(`http://localhost:5000/api/salary/${id}`, {
+//       await axios.delete(`https://hr-sample-backend.onrender.com/api/salary/${id}`, {
 //         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
 //       });
 
@@ -330,7 +330,7 @@ const SalaryList = () => {
 
   const fetchSalaries = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/salary", {
+      const response = await axios.get("https://hr-sample-backend.onrender.com/api/salary", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
 
@@ -346,7 +346,7 @@ const SalaryList = () => {
     if (!window.confirm("Are you sure you want to delete this salary record?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/salary/${id}`, {
+      await axios.delete(`https://hr-sample-backend.onrender.com/api/salary/${id}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
 

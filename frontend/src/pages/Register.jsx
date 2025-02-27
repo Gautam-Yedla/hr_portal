@@ -22,7 +22,7 @@ const Register = () => {
     }
     setLoading(true);
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/register-admin", { 
+      const response = await axios.post("https://hr-sample-backend.onrender.com/api/auth/register-admin", { 
         name, 
         email, 
         password 

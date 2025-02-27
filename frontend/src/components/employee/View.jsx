@@ -10,7 +10,7 @@
 //       const fetchEmployee = async () => {
 //         try {
 //           const response = await axios.get(
-//             `http://localhost:5000/api/employee/${id}`,
+//             `https://hr-sample-backend.onrender.com/api/employee/${id}`,
 //             {
 //               headers: {
 //                 Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -41,7 +41,7 @@
 //               <div className='flex justify-center items-center'>
 //                 <div className='relative'>
 //                   <img 
-//                     src={`http://localhost:5000/${employee.userId.profileImage}`} 
+//                     src={`https://hr-sample-backend.onrender.com/${employee.userId.profileImage}`} 
 //                     alt='Profile' 
 //                     className='rounded-full border-8 border-teal-500 shadow-xl w-72 h-72 object-cover transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:translate-y-1'
 //                   />
@@ -142,7 +142,7 @@ const View = () => {
   useEffect(() => {
     const fetchEmployee = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/employee/${id}`, {
+        const response = await axios.get(`https://hr-sample-backend.onrender.com/api/employee/${id}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
         if (response.data.success) {
@@ -180,7 +180,7 @@ const View = () => {
         {/* Profile Image */}
         <div className="flex justify-center">
           <img
-            src={`http://localhost:5000/${employee.userId.profileImage}`}
+            src={`https://hr-sample-backend.onrender.com/${employee.userId.profileImage}`}
             alt="Profile"
             className="rounded-full border-8 border-teal-500 w-72 h-72 object-cover"
           />

@@ -23,7 +23,11 @@
 //         }
 
 //         const response = await axios.get(
+<<<<<<< HEAD
 //           `http://localhost:5000,
+=======
+//           `https://hr-sample-backend.onrender.com/api/leave/${id}`,
+>>>>>>> 79ba04a (Updated backend URLs to production)
 //           {
 //             headers: {
 //               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -51,7 +55,12 @@
 
 //     try {
 //       const response = await axios.put(
+<<<<<<< HEAD
 //         `http://localhost:http://localhost:5000tatus },
+=======
+//         `https://hr-sample-backend.onrender.com/api/leave/${id}`,
+//         { status },
+>>>>>>> 79ba04a (Updated backend URLs to production)
 //         {
 //           headers: {
 //             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -83,7 +92,12 @@
 //               <img
 //                 src={
 //                   leave?.employeeId?.userId?.profileImage
+<<<<<<< HEAD
 //                     ? `http://localhost:5000/${leave.emplhttp://localhost:5000               : "/default-avatar.png"
+=======
+//                     ? `https://hr-sample-backend.onrender.com/${leave.employeeId.userId.profileImage}`
+//                     : "/default-avatar.png"
+>>>>>>> 79ba04a (Updated backend URLs to production)
 //                 }
 //                 alt="Profile"
 //                 className="rounded-full border w-72 transform transition-all hover:scale-105"
@@ -191,7 +205,7 @@ const LeaveDetails = () => {
           return;
         }
 
-        const response = await axios.get(`http://localhost:5000/api/leave/${id}`, {
+        const response = await axios.get(`https://hr-sample-backend.onrender.com/api/leave/${id}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -218,7 +232,7 @@ const LeaveDetails = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/leave/${id}`,
+        `https://hr-sample-backend.onrender.com/api/leave/${id}`,
         { status },
         {
           headers: {
@@ -253,8 +267,13 @@ const LeaveDetails = () => {
               <img
                 src={
                   leave?.employeeId?.userId?.profileImage
+<<<<<<< HEAD
                     ? `http://localhost:5000/${leave.employeeId.userId.profileImage}`
                     : "https://via.placeholder.com/150"
+=======
+                    ? `https://hr-sample-backend.onrender.com/${leave.employeeId.userId.profileImage}`
+                    : "/default-avatar.png"
+>>>>>>> 79ba04a (Updated backend URLs to production)
                 }
                 alt="Profile"
                 className="rounded-full border-4 border-teal-500 w-44 h-44 object-cover shadow-lg hover:scale-105 transform transition-all"

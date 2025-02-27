@@ -20,7 +20,7 @@
 //         e.preventDefault();
 //         try {
 //             const response = await axios.post(
-//                 `http://localhost:5000/api/leave/add`, leave,
+//                 `https://hr-sample-backend.onrender.com/api/leave/add`, leave,
 //                 {
 //                     headers: {
 //                         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -150,7 +150,7 @@ const Add = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:5000/api/leave/add`, leave, {
+      const response = await axios.post(`https://hr-sample-backend.onrender.com/api/leave/add`, leave, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

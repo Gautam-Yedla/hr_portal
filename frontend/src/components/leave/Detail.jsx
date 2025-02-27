@@ -17,7 +17,7 @@
 //       const fetchLeave = async () => {
 //         try {
 //           const response = await axios.get(
-//             `http://localhost:5000/api/leave/detail/${id}`,
+//             `https://hr-sample-backend.onrender.com/api/leave/detail/${id}`,
 //             {
 //               headers: {
 //                 Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -43,7 +43,7 @@
 //     const changeStatus = async (id, status) => {
 //       try {
 //         const response = await axios.put(
-//           `http://localhost:5000/api/leave/${id}`, {status},
+//           `https://hr-sample-backend.onrender.com/api/leave/${id}`, {status},
 //           {
 //             headers: {
 //               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -70,7 +70,7 @@
 //           <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
 //               <div>
 //                 <img 
-//                   src={`http://localhost:5000/${leave.employeeId.userId.profileImage}`} alt=''
+//                   src={`https://hr-sample-backend.onrender.com/${leave.employeeId.userId.profileImage}`} alt=''
 //                   className='rounded-full border w-72'
 //                 />
 //               </div>
@@ -167,7 +167,7 @@
 //           console.log("Leave Detail ID:", id);
 
 //           const response = await axios.get(
-//             `http://localhost:5000/api/leave/detail/${id}`,
+//             `https://hr-sample-backend.onrender.com/api/leave/detail/${id}`,
 //             {
 //               headers: {
 //                 Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -193,7 +193,7 @@
 //     const changeStatus = async (id, status) => {
 //       try {
 //         const response = await axios.put(
-//           `http://localhost:5000/api/leave/${id}`, {status},
+//           `https://hr-sample-backend.onrender.com/api/leave/${id}`, {status},
 //           {
 //             headers: {
 //               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -221,7 +221,7 @@
 //               <div className='flex justify-center'>
 //               <img
 //                 src={leave?.employeeId?.userId?.profileImage ? 
-//                   `http://localhost:5000/${leave.employeeId.userId.profileImage}` : "/default-avatar.png"}
+//                   `https://hr-sample-backend.onrender.com/${leave.employeeId.userId.profileImage}` : "/default-avatar.png"}
 //                 alt="Profile"
 //                 className="rounded-full border w-72 transform transition-all hover:scale-105"
 //               />
