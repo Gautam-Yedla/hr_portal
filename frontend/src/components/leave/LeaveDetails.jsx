@@ -23,7 +23,7 @@
 //         }
 
 //         const response = await axios.get(
-//           `http://localhost:5000/api/leave/${id}`,
+//           `http://localhost:5000,
 //           {
 //             headers: {
 //               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -51,8 +51,7 @@
 
 //     try {
 //       const response = await axios.put(
-//         `http://localhost:5000/api/leave/${id}`,
-//         { status },
+//         `http://localhost:http://localhost:5000tatus },
 //         {
 //           headers: {
 //             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -84,8 +83,7 @@
 //               <img
 //                 src={
 //                   leave?.employeeId?.userId?.profileImage
-//                     ? `http://localhost:5000/${leave.employeeId.userId.profileImage}`
-//                     : "/default-avatar.png"
+//                     ? `http://localhost:5000/${leave.emplhttp://localhost:5000               : "/default-avatar.png"
 //                 }
 //                 alt="Profile"
 //                 className="rounded-full border w-72 transform transition-all hover:scale-105"
@@ -256,7 +254,7 @@ const LeaveDetails = () => {
                 src={
                   leave?.employeeId?.userId?.profileImage
                     ? `http://localhost:5000/${leave.employeeId.userId.profileImage}`
-                    : "/default-avatar.png"
+                    : "https://via.placeholder.com/150"
                 }
                 alt="Profile"
                 className="rounded-full border-4 border-teal-500 w-44 h-44 object-cover shadow-lg hover:scale-105 transform transition-all"

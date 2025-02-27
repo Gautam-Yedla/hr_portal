@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --env-file=.env index.js",
+    "start": "nodemon index.js",
     "dev": "nodemon index.js"
   },
   "keywords": [],
@@ -34,3 +34,6 @@
     "stripe": "^17.6.0"
   }
 }
+
+
+
