@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "https://hr-sample-backend.onrender.com/api/announcements";
+const API_URL = "http://localhost:5000/api/announcements";
 
 // ➤ Get All Announcements
 export const fetchAnnouncements = async () => {

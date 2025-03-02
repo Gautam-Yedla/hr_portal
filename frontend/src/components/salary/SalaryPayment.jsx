@@ -21,7 +21,7 @@
 
 //   const fetchSalaryDetails = async () => {
 //     try {
-//       const response = await axios.get(`https://hr-sample-backend.onrender.com/api/salary/${id}`, {
+//       const response = await axios.get(`http://localhost:5000/api/salary/${id}`, {
 //         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
 //       });
 //       setSalary(response.data.salary);
@@ -35,7 +35,7 @@
 //   // ✅ Mark as Paid (For Cash/Bank Transfers)
 //   const handleMarkAsPaid = async () => {
 //     try {
-//       await axios.put(`https://hr-sample-backend.onrender.com/api/salary/mark-paid/${id}`, {}, {
+//       await axios.put(`http://localhost:5000/api/salary/mark-paid/${id}`, {}, {
 //         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
 //       });
 

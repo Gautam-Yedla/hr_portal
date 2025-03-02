@@ -14,7 +14,7 @@
 //     const fetchEmployees = async () => {
 //       setEmpLoading(true);
 //       try {
-//         const response = await axios.get('https://hr-sample-backend.onrender.com/api/employee', {
+//         const response = await axios.get('http://localhost:5000/api/employee', {
 //           headers: {
 //             "Authorization": `Bearer ${localStorage.getItem('token')}`
 //           }
@@ -28,7 +28,7 @@
 //               dep_name: emp.department.dep_name,
 //               name: emp.userId.name,
 //               dob: new Date(emp.dob).toLocaleDateString(),
-//               profileImage: <img width={40} className='rounded-full' src={`https://hr-sample-backend.onrender.com/${emp.userId.profileImage}`} />,
+//               profileImage: <img width={40} className='rounded-full' src={`http://localhost:5000/${emp.userId.profileImage}`} />,
 //               action: (<EmployeeButtons _id={emp._id} />)
 //             }
 //           ));
@@ -178,7 +178,7 @@ const List = () => {
   const fetchEmployees = async () => {
     setEmpLoading(true);
     try {
-      const response = await axios.get(`https://hr-sample-backend.onrender.com/api/employee?page=${page}`, {
+      const response = await axios.get(`http://localhost:5000/api/employee?page=${page}`, {
         headers: { "Authorization": `Bearer ${localStorage.getItem('token')}` }
       });
 
@@ -238,7 +238,7 @@ const List = () => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this employee?")) {
       try {
-        await axios.delete(`https://hr-sample-backend.onrender.com/api/employee/${id}`, {
+        await axios.delete(`http://localhost:5000/api/employee/${id}`, {
           headers: { "Authorization": `Bearer ${localStorage.getItem('token')}` }
         });
         const updatedEmployees = employees.filter(emp => emp._id !== id);
@@ -277,7 +277,7 @@ const List = () => {
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
           {filteredEmployee.map(emp => (
             <div key={emp._id} className='bg-white rounded-xl shadow-lg p-5 hover:shadow-2xl transition-transform transform hover:scale-105'>
-              <img src={`https://hr-sample-backend.onrender.com/${emp.profileImage}`} alt={emp.name} className='w-24 h-24 rounded-full mx-auto border-2 border-blue-500' />
+              <img src={`http://localhost:5000/${emp.profileImage}`} alt={emp.name} className='w-24 h-24 rounded-full mx-auto border-2 border-blue-500' />
               <h2 className='text-center text-xl font-bold mt-3'>{emp.name}</h2>
               <p className='text-center text-gray-500'>{emp.dep_name}</p>
               <p className='text-center text-sm text-gray-400'>DOB: {emp.dob}</p>
@@ -298,7 +298,7 @@ const List = () => {
               ...col,
               selector: row => (
                 <img
-                  src={`https://hr-sample-backend.onrender.com/${row.profileImage}`}
+                  src={`http://localhost:5000/${row.profileImage}`}
                   alt={row.name}
                   className="w-10 h-10 rounded-full border-2 border-gray-300"
                 />

@@ -12,7 +12,7 @@
 //             const token = localStorage.getItem('token');
 //             if(token) {
 //               const response = await axios.get(
-//                 'https://hr-sample-backend.onrender.com/api/auth/verify', 
+//                 'http://localhost:5000/api/auth/verify', 
 //                 {
 //                   headers: {
 //                     "Authorization": `Bearer ${token}`,
@@ -83,7 +83,7 @@ const AuthProvider = ({ children }) => { // Renamed function for clarity
             const token = localStorage.getItem('token');
             if (token) {
               const response = await axios.get(
-                'https://hr-sample-backend.onrender.com/api/auth/verify', 
+                'http://localhost:5000/api/auth/verify', 
                 {
                   headers: {
                     "Authorization": `Bearer ${token}`,

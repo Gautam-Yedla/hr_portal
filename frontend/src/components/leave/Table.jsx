@@ -10,7 +10,7 @@
 //   // Fetch leave data
 //   const fetchLeaves = async () => {
 //     try {
-//       const response = await axios.get('https://hr-sample-backend.onrender.com/api/leave', {
+//       const response = await axios.get('http://localhost:5000/api/leave', {
 //         headers: {
 //           "Authorization": `Bearer ${localStorage.getItem('token')}`,
 //         },
@@ -176,7 +176,7 @@ const Table = () => {
   // Fetch leave data with pagination for infinite scroll
   const fetchLeaves = async (currentPage) => {
     try {
-      const response = await axios.get(`https://hr-sample-backend.onrender.com/api/leave?page=${currentPage}&limit=${ITEMS_PER_PAGE}`, {
+      const response = await axios.get(`http://localhost:5000/api/leave?page=${currentPage}&limit=${ITEMS_PER_PAGE}`, {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem('token')}`,
         },

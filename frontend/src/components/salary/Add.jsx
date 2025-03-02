@@ -75,7 +75,7 @@
 //     };
 
 //     try {
-//       const response = await axios.post(`https://hr-sample-backend.onrender.com/api/salary/add`, salaryData, {
+//       const response = await axios.post(`http://localhost:5000/api/salary/add`, salaryData, {
 //         headers: {
 //           Authorization: `Bearer ${localStorage.getItem("token")}`,
 //         },
@@ -331,7 +331,7 @@ const Add = () => {
     };
 
     try {
-      const response = await axios.post(`https://hr-sample-backend.onrender.com/api/salary/add`, salaryData, {
+      const response = await axios.post(`http://localhost:5000/api/salary/add`, salaryData, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
 

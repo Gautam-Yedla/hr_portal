@@ -32,7 +32,7 @@ const DepartmentList = () => {
   const fetchDepartments = async () => {
     setLoading(true);
     try {
-      const response = await axios.get("https://hr-sample-backend.onrender.com/api/department", {
+      const response = await axios.get("http://localhost:5000/api/department", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
 
@@ -76,7 +76,7 @@ const DepartmentList = () => {
   //   console.log("Attempting to delete department with ID:", selectedDepartmentId);
 
   //   try {
-  //       const response = await axios.delete(`https://hr-sample-backend.onrender.com/api/department/${selectedDepartmentId}`, {
+  //       const response = await axios.delete(`http://localhost:5000/api/department/${selectedDepartmentId}`, {
   //           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
   //       });
 
@@ -112,7 +112,7 @@ const DepartmentList = () => {
     console.log("Attempting to delete department with ID:", selectedDepartmentId);
 
     try {
-        const response = await axios.delete(`https://hr-sample-backend.onrender.com/api/department/${selectedDepartmentId}`, {
+        const response = await axios.delete(`http://localhost:5000/api/department/${selectedDepartmentId}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
 

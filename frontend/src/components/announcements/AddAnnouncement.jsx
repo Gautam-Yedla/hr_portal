@@ -43,7 +43,7 @@ const AddAnnouncement = () => {
     const fetchDepartments = async () => {
       setLoadingDepartments(true);
       try {
-        const response = await axios.get("https://hr-sample-backend.onrender.com/api/department", {
+        const response = await axios.get("http://localhost:5000/api/department", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

@@ -27,7 +27,7 @@
 //     } else {
 //       try {
 //         const response = await axios.put(
-//           `https://hr-sample-backend.onrender.com/api/setting/change-password`,
+//           `http://localhost:5000/api/setting/change-password`,
 //           setting,
 //           {
 //             headers: {
@@ -167,7 +167,7 @@ const Setting = () => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get('https://hr-sample-backend.onrender.com/api/setting/get-profile', {
+        const response = await axios.get('http://localhost:5000/api/setting/get-profile', {
           headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
         });
         if (response.data.success) {
@@ -229,7 +229,7 @@ const Setting = () => {
         console.log("🔹 Sending Data:", Object.fromEntries(formDataToSend));
 
         const response = await axios.put(
-            "https://hr-sample-backend.onrender.com/api/setting/update-profile",
+            "http://localhost:5000/api/setting/update-profile",
             formDataToSend,
             { 
                 headers: { 

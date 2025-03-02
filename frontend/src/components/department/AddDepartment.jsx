@@ -50,7 +50,7 @@
 //         setLoading(true); 
 
 //         try {
-//             const response = await axios.post('https://hr-sample-backend.onrender.com/api/department/add', department, {
+//             const response = await axios.post('http://localhost:5000/api/department/add', department, {
 //                 headers: {
 //                     "Authorization": `Bearer ${localStorage.getItem("token")}`
 //                 }
@@ -248,7 +248,7 @@ const AddDepartment = () => {
         setLoading(true);
 
         try {
-            const response = await axios.post('https://hr-sample-backend.onrender.com/api/department/add', department, {
+            const response = await axios.post('http://localhost:5000/api/department/add', department, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`
                 }

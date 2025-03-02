@@ -18,7 +18,7 @@ const View = () => {
 
   const fetchSalaries = async () => {
     try {
-      const response = await axios.get(`https://hr-sample-backend.onrender.com/api/salary/${id}/${user.role}`, {
+      const response = await axios.get(`http://localhost:5000/api/salary/${id}/${user.role}`, {
         headers: { "Authorization": `Bearer ${localStorage.getItem('token')}` },
       });
 
@@ -61,7 +61,7 @@ const View = () => {
 
   const markAsPaid = async (salaryId) => {
     try {
-      const response = await axios.put(`https://hr-sample-backend.onrender.com/api/salary/mark-paid/${salaryId}`, {}, {
+      const response = await axios.put(`http://localhost:5000/api/salary/mark-paid/${salaryId}`, {}, {
         headers: { "Authorization": `Bearer ${localStorage.getItem('token')}` },
       });
 

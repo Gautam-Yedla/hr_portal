@@ -110,7 +110,7 @@ const AnnouncementDetails = () => {
               variant="outlined"
               color="primary"
               startIcon={<Download />}
-              href={`https://hr-sample-backend.onrender.com/api/announcements/download/form16/${announcement.form16File}`}
+              href={`http://localhost:5000/api/announcements/download/form16/${announcement.form16File}`}
               sx={{ mt: 3 }}
               target="_blank"
               rel="noopener noreferrer"
