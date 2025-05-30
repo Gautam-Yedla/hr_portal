@@ -45,9 +45,9 @@ app.listen(PORT, () => {
 });
 
 process.on("uncaughtException", (err) => {
-  console.error("❌ Uncaught Exception:", err);
+  console.error(" Uncaught Exception:", err);
 });
 
 process.on("unhandledRejection", (err) => {
-  console.error("❌ Unhandled Promise Rejection:", err);
+  console.error(" Unhandled Promise Rejection:", err);
 });

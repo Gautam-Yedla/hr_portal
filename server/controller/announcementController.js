@@ -262,7 +262,7 @@ export const deleteAnnouncement = async (req, res) => {
 
     // ✅ Delete associated Form 16 file if exists
     if (deletedAnnouncement.form16File) {
-      const filePath = path.join("E:/hr_sample/server/uploads/form16/", deletedAnnouncement.form16File);
+      // const filePath = path.join("E:/hr_sample/server/uploads/form16/", deletedAnnouncement.form16File);
       fs.unlink(filePath, (err) => {
         if (err) console.error("Error deleting Form 16 file:", err);
       });
@@ -279,7 +279,7 @@ export const deleteAnnouncement = async (req, res) => {
 // ➤ Download Form 16
 export const downloadForm16 = (req, res) => {
   const filename = req.params.filename;
-  const filePath = path.join("E:/hr_sample/server/uploads/form16/", filename);
+  // const filePath = path.join("E:/hr_sample/server/uploads/form16/", filename);
   console.log("Resolved Path:", path.resolve(filePath));
 
 

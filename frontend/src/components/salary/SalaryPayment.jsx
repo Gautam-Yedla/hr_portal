@@ -26,7 +26,7 @@
 //       });
 //       setSalary(response.data.salary);
 //     } catch (error) {
-//       console.error("❌ Error fetching salary details:", error);
+//       console.error(" Error fetching salary details:", error);
 //     } finally {
 //       setLoading(false);
 //     }
@@ -42,7 +42,7 @@
 //       alert("✅ Salary marked as paid!");
 //       navigate("/admin-dashboard/salary");
 //     } catch (error) {
-//       console.error("❌ Error marking salary as paid:", error);
+//       console.error(" Error marking salary as paid:", error);
 //     }
 //   };
 

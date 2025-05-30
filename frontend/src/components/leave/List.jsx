@@ -187,7 +187,7 @@ const List = () => {
   };
 
   return (
-    <div className="p-6 bg-gradient-to-br from-gray-900 to-gray-800 text-white min-h-screen rounded-xl shadow-2xl">
+    <div className="p-6 bg-gradient-to-br   text-black min-h-screen rounded-xl shadow-2xl">
       {/* ✅ Title */}
       <div className="text-center mb-6">
         <h3 className="text-3xl font-extrabold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-blue-500">
@@ -202,13 +202,13 @@ const List = () => {
           placeholder="Search by Leave Type..."
           value={searchQuery}
           onChange={handleSearch}
-          className="px-4 py-2 rounded-lg border border-gray-700 bg-gray-900 text-white focus:ring-2 focus:ring-teal-400"
+          className="px-4 py-2 rounded-lg border  text-black focus:ring-2 focus:ring-teal-400"
         />
 
         {user.role === "employee" && (
           <Link
             to="/employee-dashboard/add-leave"
-            className="px-5 py-2 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-full"
+            className="px-5 py-2 bg-teal-500 hover:bg-teal-600 text-black font-semibold rounded-full"
           >
             + Add Leave
           </Link>
@@ -218,9 +218,9 @@ const List = () => {
       {/* ✅ Table */}
       {filteredLeaves.length > 0 ? (
         <div className="overflow-x-auto rounded-lg shadow-lg">
-          <table className="w-full text-sm text-left text-gray-300 border border-gray-700">
-            <thead className="text-xs uppercase bg-gray-800 text-gray-400">
-              <tr className="border-b border-gray-700">
+          <table className="w-full text-sm text-left border-black border border-gray-700">
+            <thead className="text-xs uppercase  text-gray-400">
+              <tr className="border-b border-black">
                 <th className="px-6 py-3">SNO</th>
                 <th className="px-6 py-3">Leave Type</th>
                 <th className="px-6 py-3">From</th>
@@ -231,22 +231,22 @@ const List = () => {
             </thead>
             <tbody>
               {filteredLeaves.map((leave) => (
-                <tr key={leave._id} className="bg-gray-900 border-b border-gray-700">
+                <tr key={leave._id} className=" border-b border-gray-700">
                   <td className="px-6 py-3">{sno++}</td>
                   <td className="px-6 py-3 font-semibold text-teal-400">
                     {leave.leaveType}
                   </td>
                   <td className="px-6 py-3">{new Date(leave.startDate).toLocaleDateString()}</td>
                   <td className="px-6 py-3">{new Date(leave.endDate).toLocaleDateString()}</td>
-                  <td className="px-6 py-3 text-gray-300">{leave.reason}</td>
+                  <td className="px-6 py-3 border-black">{leave.reason}</td>
                   <td className="px-6 py-3">
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-bold ${
                         leave.status === "Approved"
-                          ? "bg-green-500 text-white"
+                          ? "bg-green-500 text-black"
                           : leave.status === "Pending"
-                          ? "bg-yellow-500 text-white"
-                          : "bg-red-500 text-white"
+                          ? "bg-yellow-500 text-black"
+                          : "bg-red-500 text-black"
                       }`}
                     >
                       {leave.status}

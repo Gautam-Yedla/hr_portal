@@ -40,7 +40,7 @@ const addSalary = async (req, res) => {
 
     return res.status(200).json({ success: true, message: "Salary added successfully" });
   } catch (error) {
-    console.error("❌ Error adding salary:", error);
+    console.error(" Error adding salary:", error);
     return res.status(500).json({ success: false, message: "Server error while adding salary" });
   }
 };
@@ -64,6 +64,28 @@ const getSalary = async (req, res) => {
   }
 }
 
+
+// const getSalary = async (req, res) => {
+//   try {
+//     const { id, role } = req.params;
+//     let salary;
+
+//     if (role === "admin" || role === "hr") {
+//       // Fetch all salaries for that employee
+//       salary = await Salary.find({ employeeId: id }).populate("employeeId");
+//     } else {
+//       // For employees - show only their salary records
+//       salary = await Salary.find({ employeeId: id }).populate("employeeId");
+//     }
+
+//     res.status(200).json({ success: true, salary });
+//   } catch (error) {
+//     console.error("Error fetching salary:", error.message);
+//     res.status(500).json({ success: false, message: "Error fetching salary" });
+//   }
+// };
+
+
 const getAllSalaries = async (req, res) => {
   try {
     const salaries = await Salary.find().populate({
@@ -74,7 +96,7 @@ const getAllSalaries = async (req, res) => {
     console.log("✅ All Salaries Fetched:", salaries);
     return res.status(200).json({ success: true, salaries });
   } catch (error) {
-    console.error("❌ Error fetching salaries:", error);
+    console.error(" Error fetching salaries:", error);
     return res.status(500).json({ success: false, message: "Server error while fetching salaries" });
   }
 };
@@ -85,37 +107,53 @@ const deleteSalary = async (req, res) => {
     await Salary.findByIdAndDelete(id);
     return res.status(200).json({ success: true, message: "Salary record deleted successfully" });
   } catch (error) {
-    console.error("❌ Error deleting salary:", error);
+    console.error(" Error deleting salary:", error);
     return res.status(500).json({ success: false, message: "Server error while deleting salary record" });
   }
 };
 
-const markSalaryAsPaid = async (req, res) => {
+// const markSalaryAsPaid = async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const { paymentMethod, paypalOrderID } = req.body; 
+
+//     const salary = await Salary.findById(id);
+//     if (!salary) {
+//       return res.status(404).json({ success: false, message: "Salary record not found" });
+//     }
+
+//     // Update salary status & payment method
+//     salary.status = "Paid";
+//     salary.paymentMethod = paymentMethod;
+
+//     await salary.save();
+
+//     return res.status(200).json({ success: true, message: "Salary marked as Paid" });
+//   } catch (error) {
+//     console.error(" Error marking salary as paid:", error);
+//     return res.status(500).json({ success: false, message: "Server error" });
+//   }
+// };
+
+const updateSalaryStatus = async (req, res) => {
   try {
     const { id } = req.params;
-    const { paymentMethod, paypalOrderID } = req.body; 
-
-    const salary = await Salary.findById(id);
+    const { status } = req.body;
+    const salary = await Salary.findByIdAndUpdate(
+      id,
+      { status: status },
+      { new: true }
+    );
     if (!salary) {
-      return res.status(404).json({ success: false, message: "Salary record not found" });
+      return res.status(404).json({ success: false, message: "Salary not found" });
     }
-
-    // Update salary status & payment method
-    salary.status = "Paid";
-    salary.paymentMethod = paymentMethod;
-    if (paymentMethod === "PayPal") {
-      salary.paypalOrderID = paypalOrderID; 
-    }
-
-    await salary.save();
-
-    return res.status(200).json({ success: true, message: "Salary marked as Paid" });
+    res.status(200).json({ success: true, message: "Status updated successfully", salary });
   } catch (error) {
-    console.error("❌ Error marking salary as paid:", error);
-    return res.status(500).json({ success: false, message: "Server error" });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
 
 
-export { addSalary, getSalary, markSalaryAsPaid, deleteSalary, getAllSalaries };
+
+export { addSalary, getSalary, deleteSalary, getAllSalaries, updateSalaryStatus };

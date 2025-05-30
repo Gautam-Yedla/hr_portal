@@ -297,7 +297,7 @@ const sendLeaveNotification = async (adminEmail, employeeEmail, leave, status) =
     console.log(`   🚀 Status: ${status.toUpperCase()}`);
     console.log(`   📨 Message ID: ${info.messageId}`);
   } catch (error) {
-    console.error("❌ Error sending email:", error);
+    console.error(" Error sending email:", error);
   }
 };
 

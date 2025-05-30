@@ -3,9 +3,6 @@ import User from '../models/User.js';
 import bcrypt from 'bcrypt';
 
 
-
-
-
 // Register Admin
 const registerAdmin = async (req, res) => {
   try {
@@ -25,7 +22,6 @@ const registerAdmin = async (req, res) => {
       role: 'admin',
     });
 
-    
     await newUser.save();
 
     // Generate JWT token
@@ -38,13 +34,10 @@ const registerAdmin = async (req, res) => {
       user: { _id: newUser._id, name: newUser.name, role: newUser.role },
     });
   } catch (error) {
-    console.error("❌ Registration Error:", error); 
+    console.error(" Registration Error:", error); 
     res.status(500).json({ success: false, error: "Server error. Please try again later." });
   }
 };
-
-
-
 
 
 // Login Function
@@ -77,14 +70,10 @@ const login = async (req, res) => {
     });
 
   } catch (error) {
-    console.error("❌ Login Error:", error); 
+    console.error(" Login Error:", error); 
     res.status(500).json({ success: false, error: "Server error. Please try again later." });
   }
 };
-
-
-
-
 
 // Verify Token Middleware
 const verify = (req, res) => {

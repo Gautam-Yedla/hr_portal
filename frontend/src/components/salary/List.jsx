@@ -43,7 +43,7 @@
 
 //       setSalaries(response.data.salaries || []);
 //     } catch (error) {
-//       console.error("❌ Error fetching salaries:", error);
+//       console.error(" Error fetching salaries:", error);
 //     } finally {
 //       setLoading(false);
 //     }
@@ -57,7 +57,7 @@
 
 //       fetchSalaries(); // Refresh list
 //     } catch (error) {
-//       console.error("❌ Error marking salary as paid:", error);
+//       console.error(" Error marking salary as paid:", error);
 //     }
 //   };
 
@@ -71,7 +71,7 @@
 
 //       fetchSalaries(); 
 //     } catch (error) {
-//       console.error("❌ Error deleting salary:", error);
+//       console.error(" Error deleting salary:", error);
 //     }
 //   };
 
@@ -336,7 +336,7 @@ const SalaryList = () => {
 
       setSalaries(response.data.salaries || []);
     } catch (error) {
-      console.error("❌ Error fetching salaries:", error);
+      console.error(" Error fetching salaries:", error);
     } finally {
       setLoading(false);
     }
@@ -352,7 +352,7 @@ const SalaryList = () => {
 
       fetchSalaries(); 
     } catch (error) {
-      console.error("❌ Error deleting salary:", error);
+      console.error(" Error deleting salary:", error);
     }
   };
 

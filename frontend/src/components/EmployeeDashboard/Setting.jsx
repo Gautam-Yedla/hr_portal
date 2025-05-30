@@ -245,7 +245,7 @@ const Setting = () => {
             setError(null);
         }
     } catch (error) {
-        console.error("❌ Error updating profile:", error.response?.data || error);
+        console.error(" Error updating profile:", error.response?.data || error);
         setError(error.response?.data?.error || "Something went wrong");
     }
 };

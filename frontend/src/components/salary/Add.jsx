@@ -278,7 +278,7 @@ const Add = () => {
         const departments = await fetchDepartments();
         setDepartments(departments);
       } catch (error) {
-        console.error("❌ Error fetching departments:", error);
+        console.error(" Error fetching departments:", error);
       } finally {
         setLoading(false);
       }
@@ -292,7 +292,7 @@ const Add = () => {
       const emps = await getEmployees(departmentId);
       setEmployees(emps);
     } catch (error) {
-      console.error("❌ Error fetching employees:", error);
+      console.error(" Error fetching employees:", error);
     }
   };
 
@@ -337,7 +337,7 @@ const Add = () => {
 
       if (response.data.success) navigate("/admin-dashboard/employees");
     } catch (error) {
-      console.error("❌ Error adding salary:", error.response?.data || error.message);
+      console.error(" Error adding salary:", error.response?.data || error.message);
       alert(error.response?.data?.error || "Failed to add salary.");
     }
   };
